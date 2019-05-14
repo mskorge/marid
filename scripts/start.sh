@@ -8,7 +8,7 @@ DJAVAX_NET_DEBUG=${DJAVAX_NET_DEBUG:-''}
 
 # Set config variables
 sed -i "s/^apiKey=.*$/apiKey=${MARID_API_KEY}/g" /etc/opsgenie/marid/marid.conf
-sed -i "s/^opsgenie\.api\.url=.*$/opsgenie.api.url=${MARID_API_URL}/g" /etc/opsgenie/marid/marid.conf
+sed -i "s#\(^opsgenie\.api\.url=\)\(.*$\)#\1${MARID_API_URL}#g" /etc/opsgenie/marid/marid.conf
 sed -i "s/^maridKey=.*$/maridKey=${MARID_KEY}/g" /etc/opsgenie/marid/marid.conf
 
 java \
