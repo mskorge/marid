@@ -3,6 +3,10 @@ LABEL maintainer="Michael Skorge (Forked from: oliver nad)"
 ENV MARID_API_KEY="<api-key>"
 ENV MARID_API_URL="https://api.eu.opsgenie.com"
 ENV MARID_KEY="yourSecretk3y"
+ENV MARID_HTTP_ENABLED="true"
+ENV MARID_HTTP_HOST="localhost"
+ENV MARID_HTTP_PORT="8080"
+
 ARG MARID_VERSION=2.13.2
 RUN wget https://s3-us-west-2.amazonaws.com/opsgeniedownloads/repo/opsgenie-marid_${MARID_VERSION}_all.deb -O /tmp/marid.dpkg && \
   dpkg -i /tmp/marid.dpkg
