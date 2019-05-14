@@ -7,9 +7,9 @@ MEM_LIMIT=${MEM_LIMIT:-'-Xmx512m'}
 DJAVAX_NET_DEBUG=${DJAVAX_NET_DEBUG:-''}
 
 # Set config variables
-sed -i "s/^apiKey=.*$/apiKey=${MARID_API_KEY}" /etc/opsgenie/marid/marid.conf
-sed -i "s/^opsgenie.api.url=.*$/opsgenie.api.url=${MARID_API_URL}" /etc/opsgenie/marid/marid.conf
-sed -i "s/^maridKey=.*$/maridKey=${MARID_KEY}" /etc/opsgenie/marid/marid.conf
+sed -i "s/^apiKey=.*$/apiKey=${MARID_API_KEY}/g" /etc/opsgenie/marid/marid.conf
+sed -i "s/^opsgenie.api.url=.*$/opsgenie.api.url=${MARID_API_URL}/g" /etc/opsgenie/marid/marid.conf
+sed -i "s/^maridKey=.*$/maridKey=${MARID_KEY}/g" /etc/opsgenie/marid/marid.conf
 
 java \
   -Dmarid.config=/etc/opsgenie/marid \
