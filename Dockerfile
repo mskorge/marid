@@ -1,8 +1,8 @@
-FROM java:8-jdk
-MAINTAINER oliver nadj <mr.oliver.nadj@gmail.com>
-RUN curl -O https://s3-us-west-2.amazonaws.com/opsgeniedownloads/repo/opsgenie-marid_2.4.3_all.deb && \
-  dpkg -i opsgenie-marid_2.4.3_all.deb && \
-  curl -o /var/lib/opsgenie/marid/jruby-complete-9.1.2.0.jar https://s3.amazonaws.com/jruby.org/downloads/9.1.2.0/jruby-complete-9.1.2.0.jar
+FROM openjdk:8-jdk-stretch
+LABEL maintainer="Michael Skorge (Forked from: oliver nad)"
+ARG MARID_VERSION=2.13.2
+RUN curl -O https://s3-us-west-2.amazonaws.com/opsgeniedownloads/repo/opsgenie-marid_${MARID_VERSION}_all.deb -O /tmp/marid.dpkg && \
+  dpkg -i /tmp/marid.dpkg
 
 ADD scripts/start.sh /start.sh
 ADD etc/log.properties /etc/opsgenie/marid/log.properties
