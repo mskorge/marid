@@ -1,13 +1,15 @@
 # Marid
+This repo is forked from [olivernadj/marid](https://github.com/olivernadj/marid) and modified with dynamic settings from docker env-variables.
+
 [Marid](https://www.opsgenie.com/docs/dashboard/marid) is an integration server for [OpsGenie](https://www.opsgenie.com/).
 
 ### Dockerfile
 
-This repository contains Dockerfile for [Marid 2.4](https://www.opsgenie.com/docs/marid/marid-integration-server-for-opsgenie) and JRuby 9.1.2 build and published to the public [Docker Hub Registry.](https://hub.docker.com/r/olivernadj/marid/)
+This repository contains Dockerfile for [Marid 2.X](https://www.opsgenie.com/docs/marid/marid-integration-server-for-opsgenie) and is published to the public [Docker Hub Registry.](https://cloud.docker.com/repository/docker/skorge/marid/)
 
 ### Base Docker Image
 
-* [dockerfile/java:8-jdk](http://dockerfile.github.io/#/java)
+* [openjdk:8-jdk-stretch](https://hub.docker.com/_/openjdk)
 
 ### Installation
 
