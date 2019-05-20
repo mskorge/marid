@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-CONF_PATH=${CONF_PATH:-'/etc/opsgenie/marid/marid.conf'}
+#CONF_PATH=${CONF_PATH:-'/etc/opsgenie/marid/marid.conf'}
 LOG_CONF_PATH=${LOG_CONF_PATH:-'/etc/opsgenie/marid/log.properties'}
 SCRIPTS_DIR=${SCRIPTS_DIR:-'/var/opsgenie/marid/scripts'}
 MEM_LIMIT=${MEM_LIMIT:-'-Xmx512m'}
