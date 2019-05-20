@@ -8,13 +8,13 @@ DJAVAX_NET_DEBUG=${DJAVAX_NET_DEBUG:-''}
 CONTAINER_IP=$(hostname -i)
 
 # Set config variables
-sed -i "s/^apiKey=.*$/apiKey=${MARID_API_KEY}/g" /etc/opsgenie/marid/marid.conf
-sed -i "s#\(^opsgenie\.api\.url=\)\(.*$\)#\1${MARID_API_URL}#g" /etc/opsgenie/marid/marid.conf
-sed -i "s/^maridKey=.*$/maridKey=${MARID_KEY}/g" /etc/opsgenie/marid/marid.conf
+sed -i "s/^apiKey=.*$/apiKey=${MARID_API_KEY}/g" ${CONF_PATH}
+sed -i "s#\(^opsgenie\.api\.url=\)\(.*$\)#\1${MARID_API_URL}#g" ${CONF_PATH}
+sed -i "s/^maridKey=.*$/maridKey=${MARID_KEY}/g" ${CONF_PATH}
 
-sed -i "s#\(^http\.server\.enabled=\)\(.*$\)#\1${MARID_HTTP_ENABLED}#g" /etc/opsgenie/marid/marid.conf
-sed -i "s#\(^http\.server\.host=\)\(.*$\)#\1${CONTAINER_IP}#g" /etc/opsgenie/marid/marid.conf
-sed -i "s#\(^http\.server\.port=\)\(.*$\)#\1${MARID_HTTP_PORT}#g" /etc/opsgenie/marid/marid.conf
+sed -i "s#\(^http\.server\.enabled=\)\(.*$\)#\1${MARID_HTTP_ENABLED}#g" ${CONF_PATH}
+sed -i "s#\(^http\.server\.host=\)\(.*$\)#\1${CONTAINER_IP}#g" ${CONF_PATH}
+sed -i "s#\(^http\.server\.port=\)\(.*$\)#\1${MARID_HTTP_PORT}#g" ${CONF_PATH}
 
 java \
   -Dmarid.config=/etc/opsgenie/marid \
